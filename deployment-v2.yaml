@@ -19,3 +19,9 @@ spec:
         image: nginx:1.25
         ports:
         - containerPort: 80
+        command: ["/bin/sh"]
+        args:
+          - -c
+          - |
+            echo "<h1 style='color:red'>VERSION 2 - CANARY</h1>" > /usr/share/nginx/html/index.html;
+            nginx -g 'daemon off;';
